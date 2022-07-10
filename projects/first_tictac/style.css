@@ -1,0 +1,46 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background-color: #1e1e1e;
+	color: aliceblue;
+}
+p {
+	text-align: center;
+	padding: 5rem;
+	font-size: 3rem;
+}
+.grid-container {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	min-height: 50vh;
+	width: 100vw;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+}
+button {
+	height: 5rem;
+	width: 5rem;
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 2rem;
+	background: transparent;
+	border: 2px solid aliceblue
+
+}
+
+.row1 {
+	grid-column-start: 1;
+	grid-column-end: 3;
+}
+
+.classX {
+	color: red;
+}
+.classO {
+	color: skyblue;
+}

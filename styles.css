@@ -1,0 +1,26 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	font-size: 3rem;
+	background-color: #1e1e1e;
+	color: aliceblue;
+}
+ul {
+	min-height: 50vh;
+	margin: 5rem 0;
+}
+li {
+	margin-top: 1rem;
+}
+a,
+a:visited {
+	color: inherit;
+	text-decoration: underline;
+}
