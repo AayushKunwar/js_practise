@@ -68,7 +68,7 @@ function checkForEnd() {
 	if (
 		btns[0].textContent === currPlayer &&
 		btns[4].textContent === currPlayer &&
-		btns[7].textContent === currPlayer
+		btns[8].textContent === currPlayer
 	) {
 		alert(`${currPlayer} won`);
 		location.reload();

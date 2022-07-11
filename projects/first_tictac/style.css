@@ -29,10 +29,28 @@ button {
 	vertical-align: middle;
 	font-size: 2rem;
 	background: transparent;
-	border: 2px solid aliceblue
-
+	border: 2px solid aliceblue;
 }
-
+button:nth-child(1),
+:nth-child(2),
+:nth-child(3) {
+	border-top: none;
+}
+button:nth-child(1),
+:nth-child(4),
+:nth-child(7) {
+	border-left: none;
+}
+button:nth-child(3),
+:nth-child(6),
+:nth-child(9) {
+	border-right: none;
+}
+button:nth-child(7),
+:nth-child(8),
+:nth-child(9) {
+	border-bottom: none;
+}
 .row1 {
 	grid-column-start: 1;
 	grid-column-end: 3;
