@@ -41,7 +41,7 @@ function showResult() {
 	}
 	// during class break, this is an exception sometimes
 	else if (hh == 12 && mm < 35) {
-		result = `time until 2nd class: ${timeUntil(12, 35)}`;
+		result = `Time until 2nd class: ${timeUntil(12, 35)}`;
 		addList(result);
 	}
 	// during 2nd class
