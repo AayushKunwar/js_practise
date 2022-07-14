@@ -23,36 +23,57 @@ function showTime() {
 	showResult();
 }
 function showResult() {
-	const result = document.querySelector(".result");
+	let result;
 	let date = new Date();
 	let hh = date.getHours();
 	let mm = date.getMinutes();
 
+	clearTask();
 	// 1st class start
 	if (hh < 11) {
-		result.textContent = `Time until classes: ${11 - hh}:${Math.abs(
-			60 - mm
-		)}`;
+		result = `Time until classes: ${11 - hh}:${Math.abs(60 - mm)}`;
+		addList(result);
 	}
 	// during 1st class
-	else if (hh < 12 || (hh == 12 && mm <= 30)) {
-		result.textContent = `1st class ends in ${12 - hh}:${Math.abs(
-			30 - mm
-		)}`;
+	if (hh < 12 || (hh == 12 && mm <= 30)) {
+		result = `1st class ends in ${12 - hh}:${Math.abs(30 - mm)}`;
+		addList(result);
 	}
-	// during class break
+	// during class break, this is an exception sometimes
 	else if (hh == 12 && mm < 35) {
-		result.textContent = `time until 2nd class: ${12 - hh}:${35 - mm}`;
+		result = `time until 2nd class: ${12 - hh}:${35 - mm}`;
+		addList(result);
 	}
 	// during 2nd class
-	else if (hh < 13 && hh == 13 && mm < 5) {
-		result.textContent = `2nd class ends in ${13 - hh}:${Math.abs(5 - mm)}`;
-	} else if (hh == 13 && mm < 35) {
-		result.textContent = `Break ends in ${35 - mm} minutes`;
-	} else if (hh < 15 || (hh == 15 && mm < 05)) {
-		result.textContent = `3rd class ends in ${15 - hh}:${Math.abs(5 - mm)}`;
+	if (hh < 13 || (hh == 13 && mm < 5)) {
+		result = `2nd class ends in ${13 - hh}:${Math.abs(5 - mm)}`;
+		addList(result);
+	}
+	// lunch break
+	if (hh < 13 || (hh == 13 && mm < 35)) {
+		result = `Break ends in ${13 - hh}:${Math.abs(35 - mm)} `;
+		addList(result);
+	}
+	// during 3rd class
+	if (hh < 15 || (hh == 15 && mm < 05)) {
+		result = `3rd class ends in ${15 - hh}:${Math.abs(5 - mm)}`;
+		addList(result);
 	} else {
-		result.textContent = `End of day`;
+		result = `End of day`;
+		addList(result);
 	}
 }
+
+const list = document.querySelector("ul");
+
+function addList(text) {
+	const li = document.createElement("li");
+	li.appendChild(document.createTextNode(text));
+	list.appendChild(li);
+}
+
+function clearTask() {
+	list.innerHTML = "";
+}
+
 setInterval(showTime, 1000);
