@@ -2,10 +2,11 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
 }
 body {
 	background-color: #1e1e1e;
-	color: aliceblue;
+	color: #c2e4ff;
 	margin: 5rem auto;
 	font-size: clamp(28px, 6vw, 50px);
 	text-align: center;
