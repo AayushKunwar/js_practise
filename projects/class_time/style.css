@@ -7,10 +7,12 @@ body {
 	background-color: #1e1e1e;
 	color: aliceblue;
 	margin: 5rem auto;
-	font-size: clamp(24px, 6vw, 50px);
+	font-size: clamp(28px, 6vw, 50px);
 	text-align: center;
 }
-
+p {
+	padding: 1rem;
+}
 ul {
 	list-style-type: none;
 }
