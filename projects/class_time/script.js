@@ -55,7 +55,7 @@ function showResult() {
 		addList(result);
 	}
 	// during 3rd class
-	if (hh < 15 || (hh == 15 && mm < 05)) {
+	if (hh < 16 || (hh == 16 && mm < 05)) {
 		result = `3rd class ends in ${timeUntil(16, 05)}`;
 		addList(result);
 	} else {
