@@ -9,16 +9,13 @@ for (let x of btn) {
 		if (x.textContent === "C") {
 			userInput = "";
 			updateDisplay("0");
-			console.log(userInput);
 			return;
 		}
 		if (x.textContent === " = ") {
-			console.log("= used");
 			showAns();
 			return;
 		}
 		userInput += x.textContent;
-		console.log(userInput);
 		updateDisplay();
 	});
 }
@@ -26,11 +23,9 @@ for (let x of btn) {
 function showAns() {
 	try {
 		let result = Function("return " + userInput);
-		console.log(result());
 		updateDisplay(result());
 		userInput = result();
 	} catch {
-		console.log("Error");
 		updateDisplay("error");
 		userInput = "";
 	}
