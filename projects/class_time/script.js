@@ -50,7 +50,7 @@ function showResult() {
 		addList(result);
 	}
 	// lunch break
-	if (hh < 13 || (hh == 13 && mm < 35)) {
+	if (hh < 14 || (hh == 14 && mm < 35)) {
 		result = `Break ends in ${timeUntil(14, 35)} `;
 		addList(result);
 	}
