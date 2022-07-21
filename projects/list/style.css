@@ -30,6 +30,7 @@ input {
 }
 ul {
 	margin-top: 2rem;
+	overflow: hidden;
 }
 li {
 	position: relative;
@@ -38,7 +39,9 @@ li {
 	height: max-content;
 	padding: 0.5rem;
 }
-
+li:nth-child(odd) {
+	background-color: #242424;
+}
 .close {
 	padding: 0.5rem;
 	position: absolute;
@@ -48,4 +51,7 @@ li {
 .close:hover {
 	background-color: red;
 	color: black;
+}
+.checked {
+	text-decoration: line-through;
 }

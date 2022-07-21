@@ -2,7 +2,6 @@ const list = document.querySelector("ul");
 const closeBtns = document.querySelectorAll(".close");
 
 document.querySelector(".add-list").addEventListener("click", function () {
-	console.log("enter button clicked");
 	const text = document.querySelector("#text");
 	if (text.value === "") {
 		return;
@@ -25,8 +24,10 @@ function addListItem(text) {
 	list.appendChild(li);
 	text.value = "";
 
-	closeBtn.addEventListener("click", function () {
+	closeBtn.onclick = function () {
 		li.remove();
-	});
-	console.log("added");
+	};
 }
+list.addEventListener("click", function (ev) {
+	ev.target.classList.toggle("checked");
+});
