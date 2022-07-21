@@ -8,9 +8,11 @@ body {
 	background-color: #1e1e1e;
 	color: #c2e4ff;
 	padding-top: 2rem;
+	max-width: 500px;
 	width: fit-content;
 	margin: 0 auto;
 	font-size: 2rem;
+	text-overflow: initial;
 }
 input {
 	padding: 0.5rem;
@@ -19,13 +21,31 @@ input {
 	color: #c2e4ff;
 	font-size: 2rem;
 }
-button {
+.add-list {
 	padding: 0.5rem;
 	font-size: 1rem;
+}
+.close {
+	text-align: right;
 }
 ul {
 	margin-top: 2rem;
 }
 li {
-	margin-left: 1.5rem;
+	position: relative;
+	word-wrap: break-word;
+	width: 100%;
+	height: max-content;
+	padding: 0.5rem;
+}
+
+.close {
+	padding: 0.5rem;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.close:hover {
+	background-color: red;
+	color: black;
 }
