@@ -1,0 +1,32 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background-color: #1e1e1e;
+	color: #c2e4ff;
+}
+p {
+	font-size: 2rem;
+}
+.display {
+	margin: 2rem auto;
+	width: fit-content;
+}
+.container {
+	margin: 2rem auto;
+	width: fit-content;
+	display: grid;
+	grid-template-columns: auto auto auto;
+}
+.btn {
+	background-color: #d0d0d7;
+	padding: 2rem;
+	margin: 0;
+	border-radius: 10%;
+	border: 2px solid black;
+}
+.select {
+	background-color: blueviolet;
+}
