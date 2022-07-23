@@ -27,7 +27,8 @@ function addListItem(text) {
 	closeBtn.onclick = function () {
 		li.remove();
 	};
+
+	li.onclick = function () {
+		li.classList.toggle("checked");
+	};
 }
-list.addEventListener("click", function (ev) {
-	ev.target.classList.toggle("checked");
-});
