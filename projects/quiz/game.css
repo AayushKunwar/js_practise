@@ -1,5 +1,6 @@
-.game {
+#game {
 	max-width: 75vw;
+	min-width: 40rem;
 }
 .choice-container {
 	display: flex;
