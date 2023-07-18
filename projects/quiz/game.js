@@ -1,3 +1,5 @@
+"use strict";
+
 const question = document.querySelector("#question");
 const choices = Array.from(document.querySelectorAll(".choice-text"));
 const progressText = document.querySelector("#progressText");
@@ -37,25 +39,25 @@ let questions = [
 	},
 	{
 		question: "Where was buddha born?",
-		choice1: "In the mind",
+		choice1: "Option 1",
 		choice2: "Nepal",
 		choice3: "India",
-		choice4: "Not in a hospital",
+		choice4: "Option 4",
 		answer: 2,
 	},
 ];
 
-const SCORE_POINTS = 123;
+const SCORE_POINTS = Math.floor(Math.random() * 10);
 const MAX_QUESTIONS = 4;
 
-startGame = () => {
+const startGame = () => {
 	questionCounter = 0;
 	score = 0;
 	availableQuestions = [...questions];
 	getNewQuestion();
 };
 
-getNewQuestion = () => {
+const getNewQuestion = () => {
 	if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
 		localStorage.setItem("mostRecentScore", score);
 		return window.location.assign("./end.html");
@@ -101,7 +103,7 @@ choices.forEach((choice) => {
 	});
 });
 
-incrementScore = (num) => {
+const incrementScore = (num) => {
 	score += num;
 	scoreText.innerText = score;
 };
