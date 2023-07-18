@@ -47,7 +47,7 @@ let questions = [
 	},
 ];
 
-const SCORE_POINTS = Math.floor(Math.random() * 10);
+const SCORE_POINTS = Math.floor(Math.random() * 10) + 21;
 const MAX_QUESTIONS = 4;
 
 const startGame = () => {
