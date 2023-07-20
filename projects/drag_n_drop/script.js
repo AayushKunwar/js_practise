@@ -1,3 +1,4 @@
+"use strict";
 const draggable_list = document.querySelector("#draggable-list");
 const check = document.querySelector("#check-btn");
 
@@ -50,18 +51,22 @@ function dragStart() {
 	dragStartIndex = this.closest("li").getAttribute("data-index");
 	console.log(dragStartIndex);
 }
+
 function dragOver(e) {
 	e.preventDefault();
 	// console.log("Event:", "dragOver");
 }
+
 function dragEnter() {
 	// console.log("Event:", "dragEnter");
 	this.classList.add("over");
 }
+
 function dragLeave() {
 	// console.log("Event:", "dragLeave");
 	this.classList.remove("over");
 }
+
 function dragDrop() {
 	// console.log("Event:", "dragDrop");
 	const dragEndIndex = this.getAttribute("data-index");
