@@ -14,7 +14,27 @@ const goToSlide = (slide) => {
 	slides.forEach((s, i) => {
 		s.style.transform = `translateX(${100 * (i - curSlide)}%)`;
 	});
+	updateDots();
 };
+
+const createDots = () => {
+	slides.forEach((_, i) => {
+		dotContainer.insertAdjacentHTML(
+			"beforeend",
+			`<button class="dot" data-slide="${i}"></button>`
+		);
+	});
+};
+createDots();
+
+const updateDots = () => {
+	dots = dotContainer.querySelectorAll(".dot");
+	dots.forEach((x) => {
+		x.style.backgroundColor = "grey";
+	});
+	dots[curSlide].style.backgroundColor = "white";
+};
+updateDots();
 
 const nextSlide = function () {
 	if (curSlide === maxSlide - 1) {
@@ -41,4 +61,12 @@ btnLeft.addEventListener("click", prevSlide);
 document.addEventListener("keydown", function (e) {
 	if (e.key === "ArrowLeft") prevSlide();
 	e.key === "ArrowRight" && nextSlide();
+});
+
+dotContainer.addEventListener("click", (e) => {
+	if (e.target.classList.contains("dot")) {
+		const { slide } = e.target.dataset;
+		curSlide = +slide;
+		goToSlide();
+	}
 });
