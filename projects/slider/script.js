@@ -64,9 +64,25 @@ document.addEventListener("keydown", function (e) {
 });
 
 dotContainer.addEventListener("click", (e) => {
-	if (e.target.classList.contains("dot")) {
-		const { slide } = e.target.dataset;
-		curSlide = +slide;
-		goToSlide();
-	}
+	if (!e.target.classList.contains("dot")) return;
+	const { slide } = e.target.dataset;
+	curSlide = +slide;
+	goToSlide();
+});
+
+// after the html and js are loaded and executed
+document.addEventListener("DOMContentLoaded", (e) => {
+	console.log("HTML and JS loaded");
+});
+
+// after everything is fully loaded
+window.addEventListener("load", (e) => {
+	console.log("page fully loaded");
+});
+
+// alert ? before closing website
+window.addEventListener("beforeunload", function (e) {
+	e.preventDefault();
+	alert("you are closing");
+	e.returnValue = "message";
 });
