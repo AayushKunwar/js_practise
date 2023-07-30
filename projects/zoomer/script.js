@@ -17,8 +17,8 @@ div.addEventListener("mousemove", (e) => {
 	let y = e.clientY - imageRect.top;
 	console.log(x, y);
 
-	// console.log(x / imageRect.width, y / imageRect.height);
-	let imgX = -x + imageRect.left / 2;
+	// the numbers they work
+	let imgX = -x + imageRect.left / 3;
 	let imgY = -y + imageRect.top / 1;
 	// let imgX = x;
 	// let imgY = y;
